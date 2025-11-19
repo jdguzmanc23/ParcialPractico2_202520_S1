@@ -1,19 +1,52 @@
 @if(movie) {
-<div>
-  <h2>{{ movie.title }}</h2>
-  <div>
-    <img class="poster-detail-img" [src]="movie.posterImageUrl" alt="{{ movie.title }} poster" />
-  </div>
-  <div>
-    <p><strong>Director:</strong> {{ movie.director }}</p>
-    <p><strong>Año de lanzamiento:</strong> {{ movie.releaseYear }}</p>
-    <p><strong>Calificación:</strong> {{ movie.rating }}</p>
-    <p><strong>Género:</strong> {{ movie.genre }}</p>
-    <p><strong>Sinopsis:</strong> {{ movie.description }}</p>
-  </div>
-  <div>
-    <h3>Reparto:</h3>
-    <app-actor-list [actors]="movie.cast"></app-actor-list>
+<div class="detail-container">
+  <div class="detail-content">
+    <h1 class="movie-title">{{ movie.title }}</h1>
+
+    <div class="detail-grid">
+      <div class="poster-section">
+        <img class="poster-detail-img" [src]="movie.posterImageUrl" [alt]="movie.title + ' poster'" />
+      </div>
+
+      <div class="info-section">
+        <div class="synopsis-section">
+          <h2>Sinopsis:</h2>
+          <p class="synopsis-text">{{ movie.description }}</p>
+        </div>
+
+        <div class="movie-details">
+          <div class="detail-row">
+            <span class="detail-label">Director:</span>
+            <span class="detail-value">{{ movie.director }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Año de lanzamiento:</span>
+            <span class="detail-value">{{ movie.releaseYear }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Calificación:</span>
+            <span class="detail-value">{{ movie.rating }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Género:</span>
+            <span class="detail-value">{{ movie.genre }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Duración:</span>
+            <span class="detail-value">{{ movie.duration }} min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cast-section">
+      <h2>Reparto:</h2>
+      <app-actor-list [actors]="movie.cast"></app-actor-list>
+    </div>
+
+    <div class="back-button-section">
+      <button class="back-button" (click)="goBack()">Volver al listado</button>
+    </div>
   </div>
 </div>
 }

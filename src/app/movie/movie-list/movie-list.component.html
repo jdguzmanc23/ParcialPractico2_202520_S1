@@ -1,28 +1,19 @@
-<h1>Lista de Películas</h1>
-<div>
-  <div>
-    <table>
-      <tr>
-        <th scope="col">Título</th>
-        <th scope="col">Poster</th>
-        <th scope="col">Director</th>
-        <th scope="col">Año</th>
-        <th scope="col">Calificación</th>
-      </tr>
-      @for(movie of movies; track movie.id) {
+<div class="movie-list-container">
+  <h1 class="title">Lista de Películas</h1>
 
-      <tr (click)="onSelect(movie)" style="cursor: pointer;">
-        <td>
-          <b>{{ movie.title }}</b>
-        </td>
-        <td>
-          <img class="poster-img" [src]="movie.posterImageUrl" alt="{{ movie.title }} poster" />
-        </td>
-        <td>{{ movie.director }}</td>
-        <td>{{ movie.releaseYear }}</td>
-        <td>{{ movie.rating }}</td>
-      </tr>
-      }
-    </table>
+  <div class="movies-grid">
+    @for(movie of movies; track movie.id) {
+      <div class="movie-card" (click)="onSelect(movie)">
+        <div class="card-image">
+          <img [src]="movie.posterImageUrl" [alt]="movie.title + ' poster'" />
+        </div>
+        <div class="card-content">
+          <h3 class="movie-title">{{ movie.title }}</h3>
+          <p class="movie-description">{{ movie.shortDescription }}</p>
+          <p class="movie-info"><strong>Director:</strong> {{ movie.director }}</p>
+          <p class="movie-info"><strong>Año:</strong> {{ movie.releaseYear }}</p>
+        </div>
+      </div>
+    }
   </div>
 </div>

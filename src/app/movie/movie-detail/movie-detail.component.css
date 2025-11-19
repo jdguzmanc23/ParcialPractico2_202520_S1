@@ -1,3 +1,167 @@
-img.poster-detail-img {
-  max-width: 300px;
+.detail-container {
+  background: linear-gradient(135deg,
+   #66afea 0%, 
+   #7a0202 100%);
+
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+.detail-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: 
+  white;
+  
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.movie-title {
+  text-align: center;
+  font-size: 2.5rem;
+
+  color:
+   #333;
+
+  margin: 0 0 30px 0;
+  padding-bottom: 20px;
+  border-bottom: 3px solid
+   #66afea;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.poster-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.poster-detail-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.synopsis-section h2 {
+  font-size: 1.5rem;
+  color: 
+  #333;
+  margin: 0 0 15px 0;
+}
+
+.synopsis-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color:
+   #555;
+  text-align: justify;
+}
+
+.movie-details {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid
+   #66afea;
+}
+
+.detail-row {
+  display: flex;
+  padding: 12px 0;
+
+  border-bottom: 1px solid
+   #e0e0e0;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: bold;
+  color:
+   #333;
+  min-width: 180px;
+}
+
+.detail-value {
+  color:
+   #555;
+}
+
+.cast-section {
+  margin-bottom: 30px;
+  padding: 25px;
+
+  background:
+   #f8f9fa;
+  border-radius: 8px;
+}
+
+.cast-section h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.back-button-section {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.back-button {
+  background: #66afea;
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px 
+  rgba(102, 126, 234, 0.3);
+}
+
+.back-button:hover {
+  background:
+  
+  #66afea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px 
+
+  rgba(102, 126, 234, 0.4);
+}
+
+.back-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-content {
+    padding: 20px;
+  }
+
+  .movie-title {
+    font-size: 1.8rem;
+  }
 }
