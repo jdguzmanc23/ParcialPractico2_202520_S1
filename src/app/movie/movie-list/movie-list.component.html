@@ -1,9 +1,6 @@
 <h1>Lista de Películas</h1>
 <div>
   <div>
-    @if(selected){
-    <app-movie-detail [movie]="selectedMovie"></app-movie-detail>
-    }
     <table>
       <tr>
         <th scope="col">Título</th>
@@ -14,7 +11,7 @@
       </tr>
       @for(movie of movies; track movie.id) {
 
-      <tr (click)="onSelect(movie)">
+      <tr (click)="onSelect(movie)" style="cursor: pointer;">
         <td>
           <b>{{ movie.title }}</b>
         </td>
