@@ -1,7 +1,15 @@
-<div class="actors-list">
-  @for(actor of actors; track actor.id) {
-    <div class="actor-item">
-      <span class="actor-name">{{ actor.name }}</span>
+<div class="actors-container">
+  <div class="popularity-header">
+    <div class="average-popularity">
+      <span class="popularity-label">Promedio popularidad:</span>
+      <span class="popularity-value">{{ averagePopularity }}</span>
     </div>
-  }
+  </div>
+  <div class="actors-list">
+    @for(actor of actors; track actor.id) {
+      <div class="actor-item">
+        <span class="actor-name">{{ actor.name }}</span>
+      </div>
+    }
+  </div>
 </div>
